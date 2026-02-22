@@ -38,14 +38,6 @@ jobs:
       - name: Run CLI Tests
         uses: ./.github/actions/tests/run-cli-tests
 
-      - name: Publish Test Report
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          check_name: CLI Test Results
-          files: packages/bruno-tests/collection/junit.xml
-          comment_mode: always
-
   e2e-test:
     name: Playwright E2E Tests
     timeout-minutes: 60
